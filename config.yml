@@ -1,0 +1,10 @@
+db:
+  migrate_dir: "migrations"
+  driver: "postgres"
+  dsn: "postgres://nikolay:12345@localhost:5435/docs_database?sslmode=disable"
+docs_store:
+  secure: false
+  endpoint: minio-docs_server
+  access_key: "nikolay"
+  secret_key: "12345"
+loglevel: -4
