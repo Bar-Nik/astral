@@ -4,10 +4,12 @@ package app
 type App struct {
 	repo Repo
 	docs Docs
+	// sessions Sessions
+	hash PasswordHash
 }
 
 // New build and returns new App.
-func New(r Repo, d Docs) *App {
+func New(r Repo, d Docs, ph PasswordHash) *App {
 	return &App{
 		repo: r,
 		docs: d,

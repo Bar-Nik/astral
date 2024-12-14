@@ -5,15 +5,19 @@ import (
 	"log/slog"
 )
 
-type key int
+type ctxMarker struct{}
 
-var myKey key = 5
-
+// NewContext returns context with slog.Logger.
 func NewContext(ctx context.Context, logger *slog.Logger) context.Context {
-	return context.WithValue(ctx, myKey, logger)
+	return context.WithValue(ctx, ctxMarker{}, logger)
 }
 
-func FromContext(ctx context.Context) (*slog.Logger, bool) {
-	logger, ok := ctx.Value(myKey).(*slog.Logger)
-	return logger, ok
+// FromContext returns slog.Logger from context.
+func FromContext(ctx context.Context) *slog.Logger {
+	l, ok := ctx.Value(ctxMarker{}).(*slog.Logger)
+	if !ok {
+		return slog.Default()
+	}
+
+	return l
 }

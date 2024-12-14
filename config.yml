@@ -1,6 +1,7 @@
 db:
-  migrate_dir: "migrates"
-  dsn: "postgres://nikolay:12345@localhost:5434/docs_database?sslmode=disable"
+  migrate_dir: "migrations"
+  driver: "postgres"
+  dsn: "postgres://nikolay:12345@localhost:5435/docs_database?sslmode=disable"
 docs_store:
   secure: false
   endpoint: minio-docs_server
