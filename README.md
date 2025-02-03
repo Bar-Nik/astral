@@ -1,4 +1,5 @@
-sequenceDiagram
+#Astral
+```sequenceDiagram
     actor Client as Клиент
     participant Session as Сессия
     participant Server as Сервер
@@ -18,3 +19,4 @@ sequenceDiagram
     MinIO-->>Server: Обмен данными
     Server-->>Session: Вернуть ответ
     Session-->>Client: Вернуть ответ
+```
