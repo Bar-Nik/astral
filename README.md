@@ -1,5 +1,6 @@
 #Astral
-```sequenceDiagram
+```mermaid
+sequenceDiagram
     actor Client as Клиент
     participant Session as Сессия
     participant Server as Сервер
